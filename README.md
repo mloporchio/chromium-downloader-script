@@ -1,6 +1,7 @@
 # chromium-downloader-script
 A simple bash script which downloads the latest Chromium version for your platform.
-Works fine on Linux and OS X.
+This script may be useful if you wish to update your web browser to the latest nightly build.
+Works fine on Linux and macOS.
 
 Usage: 
 
