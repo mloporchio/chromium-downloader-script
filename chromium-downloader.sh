@@ -1,6 +1,6 @@
 #!/bin/bash
 #
-#	chromium-downloader script (version 1.1a)
+#	chromium-downloader script (version 1.2)
 #
 #	A simple script which downloads the most recent Chromium
 #	build for your platform. Works on Linux and OS X.
@@ -28,19 +28,19 @@ while [ "$1" != "" ]; do
 	case "$1" in
 		-p|--path)
 			PATH_OPT=1
-			CUSTOM_PATH="$2"			
+			CUSTOM_PATH="$2"
 			;;
 		-h|--help|-*)
 			help
 			exit 1
 			;;
 		*)
-			# If a path has already been supplied 
+			# If a path has already been supplied
 			# then the option makes no sense and the help
 			# message will be displayed.
 			if [ "$PATH_OPT" -eq 0 ]; then
 				help
-				exit 1	
+				exit 1
 			fi
 			;;
 	esac
@@ -54,9 +54,9 @@ if [ "$PATH_OPT" -eq 1 ] && ! [ -d "$CUSTOM_PATH" ]; then
 	exit 1
 fi
 
-echo "chromium-downloader script (version 1.1a)"
+echo "chromium-downloader script (version 1.2)"
 # Base URL used to download the file.
-BASE_URL="http://commondatastorage.googleapis.com/chromium-browser-continuous"
+BASE_URL="https://storage.googleapis.com/chromium-browser-snapshots"
 
 # Determining the platform.
 UNAMESTR=$(uname)
